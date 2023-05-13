@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <nav>
-      <h1>Pokédex</h1>
+    <nav class="container">
+      <router-link to="/" class="logo">Pokédex</router-link>
       <div class="links">
         <router-link to="/">Dashboard</router-link> |
         <router-link to="/pesquisa">Pesquisa</router-link>
@@ -13,6 +13,9 @@
 <style scoped>
 div.header {
   background: #14213d;
+  -webkit-box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.75);
 }
 
 nav {
@@ -20,8 +23,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1366px;
-  margin: 0 auto;
 }
 
 nav a {
@@ -36,9 +37,14 @@ nav a.router-link-exact-active {
   font-weight: 900;
 }
 
-nav h1 {
+.logo {
   color: #fca311;
   font-size: 32px;
   font-weight: 900;
+}
+
+.logo.router-link-exact-active {
+  color: #fca311;
+  text-decoration: none;
 }
 </style>

@@ -25,4 +25,9 @@ body {
 #app {
   font-family: "Roboto", sans-serif;
 }
+
+.container {
+  margin: 0 auto;
+  max-width: 1366px;
+}
 </style>

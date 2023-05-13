@@ -54,7 +54,7 @@
       :to="`/pokemon/${pokemon.name}`"
       class="router-link"
     >
-      {{ pokemon.name }}
+      {{ pokemon.name.replace(/-/g, " ") }}
     </router-link>
   </div>
 

@@ -1,6 +1,6 @@
 <template>
-  <div v-if="loading" class="loading-container">
-    <p>Carregando...</p>
+  <div v-if="loading">
+    <LoadingComponent />
   </div>
   <div v-else-if="pokemon" class="pokemon-details container">
     <h2>{{ pokemon.name }}</h2>
@@ -58,6 +58,7 @@
 
 <script lang="ts">
 import axios from "axios";
+import LoadingComponent from "@/components/LoadingComponent.vue";
 
 interface Status {
   HP: number;
@@ -145,11 +146,11 @@ export default {
         });
     },
   },
+  components: { LoadingComponent },
 };
 </script>
 
 <style scoped>
-.loading-container,
 .error-container {
   display: flex;
   justify-content: center;

@@ -27,9 +27,8 @@
     </div>
   </div>
 
-  <div v-if="loading" className="loading-container">
-    <img className="loading-image" src="/pokeball.png" alt="Carregando" />
-    <p class="message">Carregando...</p>
+  <div v-if="loading">
+    <LoadingComponent />
   </div>
 
   <div
@@ -82,6 +81,7 @@
 </template>
 
 <script lang="ts">
+import LoadingComponent from "@/components/LoadingComponent.vue";
 import axios from "axios";
 
 interface Pokemon {
@@ -129,7 +129,6 @@ export default {
   methods: {
     fetchPokemonList() {
       this.loading = true;
-
       axios
         .get("https://pokeapi.co/api/v2/pokemon/?limit=1300")
         .then((response) => {
@@ -154,6 +153,7 @@ export default {
       }
     },
   },
+  components: { LoadingComponent },
 };
 </script>
 

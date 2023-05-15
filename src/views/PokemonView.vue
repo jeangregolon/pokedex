@@ -59,6 +59,7 @@
 <script lang="ts">
 import axios from "axios";
 import LoadingComponent from "@/components/LoadingComponent.vue";
+import { defineComponent } from "vue";
 
 interface Status {
   HP: number;
@@ -80,7 +81,7 @@ interface Pokemon {
   stats: Status;
 }
 
-export default {
+export default defineComponent({
   data(): {
     pokemon: Pokemon;
     loading: boolean;
@@ -109,11 +110,9 @@ export default {
   mounted() {
     this.fetchPokemon();
   },
-  computed: {},
   methods: {
     fetchPokemon() {
       this.loading = true;
-
       axios
         .get(`https://pokeapi.co/api/v2/pokemon/${this.$route.params.name}`)
         .then((response) => {
@@ -147,7 +146,7 @@ export default {
     },
   },
   components: { LoadingComponent },
-};
+});
 </script>
 
 <style scoped>

@@ -83,13 +83,14 @@
 <script lang="ts">
 import LoadingComponent from "@/components/LoadingComponent.vue";
 import axios from "axios";
+import { defineComponent } from "vue";
 
 interface Pokemon {
   name: string;
   id: number;
 }
 
-export default {
+export default defineComponent({
   data(): {
     pokemonList: Pokemon[];
     itemsPerPage: number;
@@ -154,7 +155,7 @@ export default {
     },
   },
   components: { LoadingComponent },
-};
+});
 </script>
 
 <style scoped>

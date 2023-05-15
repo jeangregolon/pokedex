@@ -159,14 +159,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
 div.search-bar {
   background: #78a1bb;
   padding: 10px 30px;
@@ -225,25 +217,6 @@ div.pagination span {
   width: 100%;
   padding: 18px 0;
   margin: 0 auto;
-}
-
-.loading-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 32px 0;
-}
-
-.loading-image {
-  width: 200px;
-  height: auto;
-  animation: rotation 5s infinite linear;
-}
-
-p.message {
-  font-size: 1.5rem;
-  padding-top: 12px;
 }
 
 .not-found-container {

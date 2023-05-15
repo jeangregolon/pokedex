@@ -1,9 +1,9 @@
 <template>
-  <div class="chart-wrapper">
-    <div v-if="loading">
-      <LoadingComponent />
-    </div>
-    <h1>Dashboard</h1>
+  <h1>Dashboard</h1>
+  <div v-if="loading">
+    <LoadingComponent />
+  </div>
+  <div class="chart-wrapper" :class="{ hide: loading }">
     <canvas id="typeChart" ref="typeChart"></canvas>
     <canvas id="genderChart" ref="genderChart"></canvas>
     <canvas id="abilityChart" ref="abilityChart"></canvas>
@@ -70,9 +70,7 @@ export default defineComponent({
     };
   },
   mounted() {
-    this.loading = true;
     this.fetchData();
-    this.loading = false;
   },
   methods: {
     async fetchGenderData(url: string): Promise<number> {
@@ -94,6 +92,8 @@ export default defineComponent({
       }
     },
     async fetchData() {
+      this.loading = true;
+
       try {
         //Gender data
         this.gender.female = await this.fetchGenderData(
@@ -226,6 +226,8 @@ export default defineComponent({
       } catch (error) {
         console.error("Erro ao buscar dados: ", error);
       } finally {
+        this.loading = false;
+
         this.renderGenderChart();
         this.renderTypeChart();
         this.renderAbilityChart();
@@ -451,5 +453,10 @@ h1 {
   font-size: 2rem;
   font-weight: 900;
   padding: 40px 0;
+  text-align: center;
+}
+
+.hide {
+  display: none;
 }
 </style>

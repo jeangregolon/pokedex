@@ -24,4 +24,13 @@ p.message {
   font-size: 1.5rem;
   padding-top: 12px;
 }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 </style>

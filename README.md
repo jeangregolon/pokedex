@@ -1,6 +1,8 @@
 # Pokédex
 Este repositório contém um projeto Vue que implementa uma Pokédex, com recursos de testes unitários utilizando Jest e integração contínua com GitHub Actions.
 
+Projeto disponível em: http://pokedex.gregolontech.com.br/
+
 ## Descrição do Projeto
 A aplicação é uma Pokédex que oferece um dashboard com gráficos estatísticos sobre os Pokémons, permitindo visualizar informações relevantes de forma intuitiva. Além disso, a aplicação conta com uma página de pesquisa que utiliza a funcionalidade de live search, tornando mais fácil encontrar Pokémons específicos. Também há uma página dedicada para exibir informações detalhadas de um Pokémon em particular.
 

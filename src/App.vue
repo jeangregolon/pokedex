@@ -1,10 +1,12 @@
 <script lang="ts">
 import HeaderComponent from "./components/HeaderComponent.vue";
+import ToastComponent from "./components/ToastComponent.vue";
 import "@/reset.css";
 
 export default {
   components: {
     HeaderComponent,
+    ToastComponent,
   },
 };
 </script>
@@ -12,6 +14,7 @@ export default {
 <template>
   <HeaderComponent />
   <router-view />
+  <ToastComponent />
 </template>
 
 <style>

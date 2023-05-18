@@ -1,0 +1,36 @@
+<template>
+  <div class="toast">
+    <span class="toast-message">Desenvolvido com</span>
+    <img src="/vue.png" alt="" class="toast-img" />
+  </div>
+</template>
+
+<style scoped>
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.toast-img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.toast-message {
+  font-size: 20px;
+}
+</style>
